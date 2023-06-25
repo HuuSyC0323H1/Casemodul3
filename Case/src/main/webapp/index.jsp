@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -11,6 +10,10 @@
 
     <!--    Google Fonts Roboto-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="indexCss.css">
     <style>
         .bg-light {
@@ -300,12 +303,18 @@
                                 Add hobbies
                             </button>
                             <div class="light-box mb-4">
-                                <c:forEach items="${listPhotos}" var="photo">
+                                <div class="row gx-2">
                                     <div class="col-lg-4 mb-2">
-                                        <img
-                                                src="${photo.linkphoto}"
-                                                alt="Lightbox image 1" class="w-100 shadow-1-strong rounded"
-                                        >
+                                        <img class="w-100 shadow-1-strong rounded"
+                                             src="https://phunugioi.com/wp-content/uploads/2020/04/anh-gai-xinh-2000-de-thuong.jpg" alt="Lightbox image 1">
+                                    </div>
+                                </div>
+                                <c:forEach var="photo" items="${lit}">
+                                    <div class="row gx-2">
+                                        <div class="col-lg-4 mb-2">
+                                            <img class="w-100 shadow-1-strong rounded"
+                                                    src="${photo.linkphoto}" alt="Lightbox image 1">
+                                        </div>
                                     </div>
                                 </c:forEach>
                             </div>
