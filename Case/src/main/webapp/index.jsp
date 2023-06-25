@@ -1,8 +1,10 @@
+
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Facebook</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -297,52 +299,15 @@
                             >
                                 Add hobbies
                             </button>
-
                             <div class="light-box mb-4">
-                                <div class="row gx-2">
+                                <c:forEach items="${listPhotos}" var="photo">
                                     <div class="col-lg-4 mb-2">
                                         <img
-                                                src="https://1.bp.blogspot.com/-5T3LHfmZg40/UkP8zXDOXXI/AAAAAAAAAhc/8rAFPtXx7-U/s1600/anh-dep-hinh-nen-thien-nhien-4.jpg"
-                                                data-img="https://1.bp.blogspot.com/-5T3LHfmZg40/UkP8zXDOXXI/AAAAAAAAAhc/8rAFPtXx7-U/s1600/anh-dep-hinh-nen-thien-nhien-4.jpg"
+                                                src="${photo.linkphoto}"
                                                 alt="Lightbox image 1" class="w-100 shadow-1-strong rounded"
                                         >
                                     </div>
-                                    <div class="col-lg-4 mb-2">
-                                        <img
-                                                src="https://1.bp.blogspot.com/-5T3LHfmZg40/UkP8zXDOXXI/AAAAAAAAAhc/8rAFPtXx7-U/s1600/anh-dep-hinh-nen-thien-nhien-4.jpg"
-                                                data-img="https://1.bp.blogspot.com/-5T3LHfmZg40/UkP8zXDOXXI/AAAAAAAAAhc/8rAFPtXx7-U/s1600/anh-dep-hinh-nen-thien-nhien-4.jpg"
-                                                alt="Lightbox image 2" class="w-100 shadow-1-strong rounded"
-                                        >
-                                    </div>
-                                    <div class="col-lg-4 mb-2">
-                                        <img
-                                                src="https://1.bp.blogspot.com/-5T3LHfmZg40/UkP8zXDOXXI/AAAAAAAAAhc/8rAFPtXx7-U/s1600/anh-dep-hinh-nen-thien-nhien-4.jpg"
-                                                data-img="https://1.bp.blogspot.com/-5T3LHfmZg40/UkP8zXDOXXI/AAAAAAAAAhc/8rAFPtXx7-U/s1600/anh-dep-hinh-nen-thien-nhien-4.jpg"
-                                                alt="Lightbox image 3 " class="w-100 shadow-1-strong rounded"
-                                        >
-                                    </div>
-                                    <div class="col-lg-4 mb-2">
-                                        <img
-                                                src="https://1.bp.blogspot.com/-5T3LHfmZg40/UkP8zXDOXXI/AAAAAAAAAhc/8rAFPtXx7-U/s1600/anh-dep-hinh-nen-thien-nhien-4.jpg"
-                                                data-img="https://1.bp.blogspot.com/-5T3LHfmZg40/UkP8zXDOXXI/AAAAAAAAAhc/8rAFPtXx7-U/s1600/anh-dep-hinh-nen-thien-nhien-4.jpg"
-                                                alt="Lightbox image 1" class="w-100 shadow-1-strong rounded"
-                                        >
-                                    </div>
-                                    <div class="col-lg-4 mb-2">
-                                        <img
-                                                src="https://1.bp.blogspot.com/-5T3LHfmZg40/UkP8zXDOXXI/AAAAAAAAAhc/8rAFPtXx7-U/s1600/anh-dep-hinh-nen-thien-nhien-4.jpg"
-                                                data-img="https://1.bp.blogspot.com/-5T3LHfmZg40/UkP8zXDOXXI/AAAAAAAAAhc/8rAFPtXx7-U/s1600/anh-dep-hinh-nen-thien-nhien-4.jpg"
-                                                alt="Lightbox image 2" class="w-100 shadow-1-strong rounded"
-                                        >
-                                    </div>
-                                    <div class="col-lg-4 mb-2">
-                                        <img
-                                                src="https://1.bp.blogspot.com/-5T3LHfmZg40/UkP8zXDOXXI/AAAAAAAAAhc/8rAFPtXx7-U/s1600/anh-dep-hinh-nen-thien-nhien-4.jpg"
-                                                data-img="https://1.bp.blogspot.com/-5T3LHfmZg40/UkP8zXDOXXI/AAAAAAAAAhc/8rAFPtXx7-U/s1600/anh-dep-hinh-nen-thien-nhien-4.jpg"
-                                                alt="Lightbox image 3 " class="w-100 shadow-1-strong rounded"
-                                        >
-                                    </div>
-                                </div>
+                                </c:forEach>
                             </div>
                             <button type="button" class="btn btn-secondary btn-block mb-4"
                                     data-mdb-ripple-color="dark"
@@ -554,7 +519,7 @@
                                 <button class="btn btn-link btn-lg">
                                     <i class="fas fa-thumbs-up mr-2">Like</i>
                                 </button>
-                                <button class="btn btn-link btn-lg" type="button" >
+                                <button class="btn btn-link btn-lg" type="button">
                                     <i class="fas fa-comment mr-2">Comment</i>
                                 </button>
                                 <button class="btn btn-link btn-lg">
@@ -567,7 +532,8 @@
                                          alt="" style="height: 40px;" class="rounded-circle border mr-2">
                                 </a>
                                 <div class="form-outline w-100">
-                                    <textarea class="form-control" id="1textAreaExample" rows="1"></textarea>
+                                    <label> <textarea class="form-control" id="1textAreaExample"
+                                                      rows="1"></textarea></label>
                                     <label class="form-label" for="textAreaExample">Message</label>
                                 </div>
                             </div>
@@ -581,7 +547,9 @@
                                         <a href="" class="text-dark mb-0">
                                             <strong>John Doe</strong>
                                         </a>
-                                        <a href="" class="d-block text-muted"><small>Buc anh that dep, ban dap chup duoc no o dau vay. toi co the xin buc anh cua ban ve may cua toi duoc khong</small></a>
+                                        <a href="" class="d-block text-muted"><small>Buc anh that dep, ban dap chup duoc
+                                            no o dau vay. toi co the xin buc anh cua ban ve may cua toi duoc
+                                            khong</small></a>
                                     </div>
                                 </div>
                                 <div class="d-flex mb-3">
@@ -662,7 +630,9 @@
                                         <a href="" class="text-dark mb-0">
                                             <strong>John Doe</strong>
                                         </a>
-                                        <a href="" class="d-block text-muted"><small>Buc anh that dep, ban dap chup duoc no o dau vay. toi co the xin buc anh cua ban ve may cua toi duoc khong</small></a>
+                                        <a href="" class="d-block text-muted"><small>Buc anh that dep, ban dap chup duoc
+                                            no o dau vay. toi co the xin buc anh cua ban ve may cua toi duoc
+                                            khong</small></a>
                                     </div>
                                 </div>
                                 <div class="d-flex mb-3">
